@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Travello template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Registration form</title>
+	<style type="text/css">
+		body {
+			background-color: lightblue;
+			display: block;
+		}
+		input {
+			display: block;
+			padding: 10px;
+			width: 30%;
+			height: 30px;
+			border: 1px solid black;
+			text-align: left;
+		}
+		form {
+			display: block;
+			align-items: center;
+		}
+		h1{
+			color: yellowgreen;
+			font-style: italic;
+			text-align: left;
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+	<h1>Thank you for Registering with us</h1>
+	<form action="register" method="POST">
+		{% csrf_token %}
+		<input type="text" name="first_name" placeholder="First Name"><br>
+		<input type="text" name="last_name" placeholder="Last Name"><br>
+		<input type="email" name="email" placeholder="Please Provide your email"><br>
+		<input type="text" name="username" placeholder="Please Provide username"><br>
+		<input type="password" name="password1" placeholder="PassWord"><br>
+		<input type="password" name="password2" placeholder="Confirm Your PassWord"><br>
+		<input type="submit" name="Submit" style="background-color: darkgray;">
+	</form>
+	<div>
+		{% for message in messages%}
+		<h3>{{message}}</h3>
+		{% endfor %}
+	</div>
+</body>
+</html>
