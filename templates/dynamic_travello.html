@@ -33,17 +33,16 @@
 							<div class="logo"><a href="#">Travello</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li class="active"><a href="index.html">Home</a></li>
+									<li class="active"><a href="#">Home</a></li>
 									<li>Hello, {{user.first_name}}</li>
 									{% if user.is_authenticated %}
+									<li><a href="converter/csv_converter" onmouseover="this.style.color='#0F0'" onmouseout="this.style.color='white'">File Formatting</a></li>
 									<li><a href="account/logout">logout</a></li>
+
 									{% else %}
 									<li><a href="account/register">Register</a></li>
-									<li><a href="account/login">login</a></li>
-
+									<li><a href="account/login">login</a></li><br>
 									{% endif %}
-
-
 								</ul>
 							</nav>
 							{% endblock %}
@@ -81,7 +80,7 @@
 		</div>
 		<div class="menu_content">
 			<ul>
-				<li><a href="{% static 'inex.html' %}">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li><a href="{% static 'about.html' %}">About us</a></li>
 				<li><a href="{% static '#">Services</a></li>
 				<li><a href="{% static 'news.html' %}">News</a></li>

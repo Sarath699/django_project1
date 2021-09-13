@@ -9,9 +9,7 @@ def logout(request):
 	return redirect('login')
 
 def login(request):
-	print("medthod has been called")
 	if request.method == "POST":
-		print("it POST request")
 		username = request.POST['username']
 		password = request.POST['password']
 		user = auth.authenticate(username=username, password=password)
